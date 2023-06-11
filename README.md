@@ -1,2 +1,4 @@
 # elladan-serrano.github.io
-abonnez vous avec la cloche des notifs svp
+Allez venez je suis sympa
+
+T'as les kramptés ?
