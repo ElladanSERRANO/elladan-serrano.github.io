@@ -188,3 +188,7 @@ function openPopup(page) {
 function closePopup(page) {
     document.getElementById(page).classList.remove("open-popup");
 }
+
+function onSubmit(token) {
+        document.getElementById("demo-form").submit();
+    }
