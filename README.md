@@ -1,4 +1,4 @@
 # elladan-serrano.github.io
-Allez venez je suis sympa
+Je suis autonome, mais ouvert à l'entraide
 
-T'as les kramptés ?
+Travaillons mais dans la main
