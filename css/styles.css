@@ -1,0 +1,579 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: rgb(15,15,15);
+    --second-bg-color: #14213D;
+    --text-color: white;
+    --main-color: #fca311;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 9%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3 ease-in-out;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3rem;
+    color: var(--main-color);
+    display: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 10rem;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.logo span {
+    color: var(--main-color);
+}
+
+.home-content h1 {
+    font-size: 8rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-img {
+    border-radius: 50%;
+}
+
+.home-img img {
+    position: relative;
+    border-radius: 50%;
+    width: 32vw;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.home-img img:hover {
+    box-shadow: 0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
+}
+
+.home-content p {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: 0.2rem solid var(--main-color);
+    font-size: 2rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: white;
+    transform: scale(1.3)translateY(-5px);
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--bg-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: var(--main-color);
+    color: var(--text-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.text-animation {
+    font-size: 42px;
+    font-weight: 600;
+    min-width: 280px;
+    margin: 10px 0;
+}
+
+.text-animation span {
+    position: relative;
+}
+
+.text-animation span::before {
+    content: "Etudiant en Informatique";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+
+.text-animation span::after {
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+.heading {
+    text-align: center;
+    font-size: 8rem;
+}
+
+/*===================Expérience Styles======================*/
+
+.timeline-section {
+    background: var(--second-bg-color);
+    padding: 100px 15px;
+}
+
+.timeline-section h2 {
+    margin-bottom: 5rem;
+}
+
+.timeline-items {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.timeline-items::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: var(--main-color);
+    left: calc(50% + 1px);
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item:nth-child(odd) {
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    padding-left: calc(50% + 30px);
+}
+
+.timeline-dot {
+    height: 21px;
+    width: 21px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25 var(--main-color);
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top: 10px;
+}
+
+.timeline-date {
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+    margin: 6px 0 15px;
+}
+
+.timeline-content {
+    background-color: var(--bg-color);
+    backdrop-filter: blur(20px);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+    padding: 30px;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.timeline-content h3 {
+    font-size: 25px;
+    color: var(--main-color);
+    margin: 0 0 10px;
+    text-transform: capitalize;
+    font-weight: 800;
+}
+
+.timeline-content p {
+    color: white;
+    opacity: 0.8;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+/*===================Compétences Styles=======================*/
+
+.skills-section {
+    background: var(--second-bg-color);
+    padding: 100px 15px;
+}
+
+.skills-section h3 {
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 60px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.professionnal-skills h3 {
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 60px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.professionnal-progress li {
+    display: inline-block;
+    margin: 0 auto;
+    float: none;
+    width: 48%;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.progress {
+    margin-bottom: 10px;
+    font: 900 1.14285/1;
+    color: white;
+}
+/*===================Projets Styles=======================*/
+.projects {
+    background: var(--bg-color);
+}
+
+.projects h2 {
+    margin-bottom: 8rem;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.projects-container .project-box {
+    position: relative;
+    height: 550px;
+    overflow: hidden;
+    display: flex;
+    border-radius: 2rem;
+    border: 3px solid transparent;
+    transition: 0.5s ease-in-out;
+}
+
+.project-box:hover {
+    border: 3px solid var(--main-color);
+}
+
+.project-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease-in-out;
+}
+
+.project-box:hover img {
+    transform: scale(1.05);
+}
+
+.project-box .project-info {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 0 4rem;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    backdrop-filter: grayscale(100%);
+}
+
+.project-box .project-info:hover {
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: grayscale(0%);
+}
+
+.project-info h4 {
+    font-size: 4rem;
+    color: var(--main-color);
+    font-weight: 800;
+}
+
+.project-info p {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0.3rem 0 1rem;
+    color: var(--main-color);
+}
+
+
+/*===================Contactme Styles=======================*/
+
+.contact {
+    background-color: var(--bg-color);
+}
+
+.contact h2 {
+    margin-bottom: 3rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input, .contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border-radius: 0.8rem;
+    border: 2px solid var(--main-color);
+    margin: 1rem 0;
+    resize: none;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+}
+
+/*===================Footer Styles=======================*/
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: var(--second-bg-color);
+}
+
+.footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: white;
+}
+
+.footer .social a {
+    font-size: 25px;
+    color: var(--main-color);
+    width: 42px;
+    height: 42px;
+    border: 2px solid var(--main-color);
+    line-height: 42px;
+    display: inline-block;
+    text-align:  center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.footer .social a:hover {
+    transform: scale(1.2)translateY(-10px);
+    background-color: var(--main-color);
+    color: var(--text-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.footer ul li a {
+    color: white;
+    background-blend-mode: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.footer ul li a:hover {
+    border-bottom: 3px solid var(--main-color);
+}
+
+.footer ul li {
+    display: inline-block;
+}
+
+/*====================KEYFRAMES & ANIMATIONS====================*/
+
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+@keyframes words {
+    0%,
+    20%{
+        content: "Etudiant en Informatique";
+    }
+    21%,
+    40%{
+        content: "Beau gosse";
+    }
+    41%,
+    60%{
+        content: "Humoriste hors paire";
+    }
+    61%,
+    80%{
+        content: "Expert en LEGO";
+    }
+    81%,
+    100%{
+        content: "Pro Gamer Fallout";
+    }
+}
+@keyframes typing{
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+        width: calc(100% + 8px);
+    }
+}
+
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--bg-color);
+    width: 50px;
+}
