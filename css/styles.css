@@ -13,7 +13,8 @@
     --bg-color: rgb(15,15,15);
     --second-bg-color: #14213D;
     --text-color: white;
-    --main-color: #fca311;
+    --main-color: #73c5ff;
+    --modal-text-color : rgb(1,1,1);
 }
 
 html {
@@ -298,42 +299,179 @@ span {
 /*===================Compétences Styles=======================*/
 
 .skills-section {
-    background: var(--second-bg-color);
+    background: var(--bg-color);
     padding: 100px 15px;
 }
 
-.skills-section h3 {
-    font-size: 30px;
-    line-height: 40px;
-    text-align: center;
-    font-weight: 400;
-    margin-bottom: 60px;
-    font-family: 'Poppins', sans-serif;
+.skills-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 30px;
+    grid-column-gap: 50px;
 }
 
-.professionnal-skills h3 {
-    font-size: 30px;
-    line-height: 40px;
+.skills-container h3 {
     text-align: center;
-    font-weight: 400;
-    margin-bottom: 60px;
-    font-family: 'Poppins', sans-serif;
+    margin-bottom: 4rem;
+    font-size: 2.4rem;
 }
 
-.professionnal-progress li {
-    display: inline-block;
-    margin: 0 auto;
-    float: none;
-    width: 48%;
-    margin-bottom: 30px;
-    text-align: center;
-}
 
-.progress {
+/*Zone gauche*/
+
+.skill-bar {
+    margin-bottom: 35px;
+  }
+  
+  .skill-bar .info {
     margin-bottom: 10px;
-    font: 900 1.14285/1;
+  }
+  
+  .skill-bar .info p {
+    font-size: 16px;
+    font-weight: bold;
     color: white;
+    margin: 0;
+  }
+  
+  /* Conteneur des segments */
+  .skill-bar .segments {
+    display: flex;
+    gap: 5px; /* Espacement entre les segments */
+  }
+  
+  /* Segment de base */
+  .skill-bar .segment {
+    display: block;
+    width: 20%; /* Chaque segment fait 20% de la largeur totale */
+    height: 20px;
+    background: #2a2a2a; /* Couleur de base pour les segments non remplis */
+    border-radius: 3px;
+    transform-origin: left; /* L'animation démarre depuis la gauche */
+    transform: scaleX(0); /* Initialement vide */
+    animation: fill-segment 0.4s ease-in-out forwards; /* Animation par défaut */
+    animation-delay: var(--delay, 0s); /* Délai personnalisé pour chaque segment */
+  }
+  
+  /* Segments remplis */
+  .skill-bar .segment.filled {
+    background: #36a2eb; /* Couleur des segments remplis */
+  }
+
+  .segment.half-filled::before {
+    content: '';
+    width: 50%; /* Remplit seulement la moitié */
+    height: 100%;
+    background-color: #36a2eb;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 2px 0 0 2px;
+  }
+  
+
+/*Zone droite*/
+
+.skill-right canvas {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  
+/*===================Veille Styles=======================*/
+
+.veille-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
+
+.veille-card {
+    width: 80px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    transition: 0.6s cubic-bezier(.91, -0.10, 0, .99);
+    transform: scale(0.8);
+    box-shadow: 5px 10px 15px -5px rgba(0, 0, 0, 0.5);
+}
+
+
+  .veille-card > .veille-row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  .veille-card > .veille-row > .icon{
+    background: white;
+    color: black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+  }
+
+  .veille-card > .veille-row > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateX(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+  }
+
+  .description p {
+    color: black;
+    padding-top: 5px;
+  }
+
+  input {
+    display: none;
+  }
+  
+  input + label {
+    width: 600px;
+    height: auto;
+    opacity: 0.3;
+  }
+  input:checked + label {
+    width: 600px;
+    height: auto;
+    opacity: 1;
+  }
+
+  input:checked + label .description{
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .veille-card[for="c1a"]{
+    background-image: url(../assets/w3school.png);
+  }
+  .veille-card[for="c2a"]{
+    background-image: url(../assets/howtodev.png);
+  }
+  .veille-card[for="c3a"]{
+    background-color: white;
+    background-image: url(../assets/stackoverflow.png);
+  }
+  .veille-card[for="c4a"]{
+    background-image: url(../assets/chatgpt.jpg);
+  }
+
 /*===================Projets Styles=======================*/
 .projects {
     background: var(--bg-color);
@@ -409,6 +547,116 @@ span {
     color: var(--main-color);
 }
 
+
+/* Modale principale */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+  
+  /* Contenu de la modale */
+  .modal-content {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+  
+  /* Partie gauche (Titre et description) */
+  .modal-left {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.modal-left h2 {
+    font-size: 24px;
+    margin-top: 0;
+    color: var(--main-color);
+}
+
+.modal-left p {
+    font-size: 16px;
+    margin: 10px 0 0;
+    color: var(--second-bg-color);
+}
+  
+  /* Partie droite (Carousel) */
+.modal-right {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 20px 30px;
+    position: relative;
+}
+
+
+.card {
+    width: 80px;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    transition: 0.6s cubic-bezier(.91, -0.10, 0, .99);
+    transform: scale(0.8);
+    box-shadow: 5px 10px 15px -5px rgba(0, 0, 0, 0.5);
+}
+
+
+  .card > .row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  .card > .row > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateX(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+  }
+
+  .description p {
+    color: black;
+    padding-top: 5px;
+  }
+
+  input {
+    display: none;
+  }
+  
+  input + label {
+    width: 600px;
+    height: auto;
+    opacity: 0.3;
+  }
+  input:checked + label {
+    width: 600px;
+    height: auto;
+    opacity: 1;
+  }
+  
 
 /*===================Contactme Styles=======================*/
 
@@ -519,24 +767,12 @@ span {
 }
 @keyframes words {
     0%,
-    20%{
-        content: "Etudiant en Informatique";
+    50%{
+        content: "Etudiant en BTS SIO";
     }
-    21%,
-    40%{
-        content: "Beau gosse";
-    }
-    41%,
-    60%{
-        content: "Humoriste hors paire";
-    }
-    61%,
-    80%{
-        content: "Expert en LEGO";
-    }
-    81%,
+    51%,
     100%{
-        content: "Pro Gamer Fallout";
+        content: "Développeur Full-Stack";
     }
 }
 @keyframes typing{
@@ -564,6 +800,17 @@ span {
         width: calc(100% + 8px);
     }
 }
+
+
+@keyframes fill-segment {
+    from {
+      transform: scaleX(0); /* Segment vide */
+    }
+    to {
+      transform: scaleX(1); /* Segment plein */
+    }
+}
+
 
 ::-webkit-scrollbar{
     width: 15px;

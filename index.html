@@ -7,6 +7,7 @@
         <title>Portfolio Elladan SERRANO</title>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
     <body>
 
         <header class="header">
-            <a href="#home" class="logo">Elladan
+            <a href="#description" class="logo">Elladan
                 <span>SERRANO</span>
             </a>
 
@@ -25,8 +26,8 @@
             <nav class="navbar">
                 <a href="#description" class="part1">Présentation</a>
                 <a href="#career" class="part2">Parcours</a>
-                <a href="#experience" class="part3">Expérience</a>
                 <a href="#skills" class="part4">Compétences</a>
+                <a href="#veille" class="part3">Veille Technologique</a>
                 <a href="#projects" class="part5">Projets</a>
                 <a href="#contactme" class="part6">Contact</a>
             </nav>
@@ -34,7 +35,7 @@
 
         <!--================================ACCUEIL====================================-->
 
-        <section class="home" id="home">
+        <section class="home" id="description">
 
             <div class="home-content">
                 <h1>Bienvenue<br> chez <span>moi</span></h1>
@@ -52,7 +53,7 @@
                     <a href="#"><i class="uil uil-discord"></i></a>
                 </div>
 
-                <a href="#" class="btn">CONTACT
+                <a href="#contactme" class="btn">CONTACT
                     <i class="uil uil-briefcase-alt"></i>
                 </a>
             </div>
@@ -110,110 +111,154 @@
                         </p>
                     </div>
                 </div>
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024-2025</div>
+                    <div class="timeline-content">
+                        <h3>2eme année BTS SIO (en cours)</h3>
+                        <p>Développement plus complexe de mes compétences
+                        en développement web 
+                        <br>(front-end avec Twig et 
+                        back-end avec Symfony, PHP et SQL).
+                        <br>Stage de 2 mois à l'association PERL pour refonte de leur site vitrine.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!--================================COMPETENCES====================================-->
 
-        <section id="skills-section" id="skills">
+        <section class="skills-section" id="skills">
             <h2 class="heading">Compétences</h2>
             <div class="skills-container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="skills-inner">
-                            <div class="professionnal-skills">
-                                <h3> Compétences Technniques</h3>
-                                <div class="each-skills">
 
-                                    <div class="skill">
-                                        <div class="parcial">
-                                            <div class="info">
-                                                <div class="name"> HTML</div>
-                                                <div class="skill-percentage">60%</div>
-                                            </div>
-                                            <div class="progressbar">
-                                                <div class="percentage-pg" style="width :20%;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="skill">
-                                        <div class="parcial">
-                                            <div class="info">
-                                                <div class="name"> CSS</div>
-                                                <div class="skill-percentage">50%</div>
-                                            </div>
-                                            <div class="progressbar">
-                                                <div class="percentage-pg" style="width :20%;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                <div class="skill-left">
+                    <h3>Compétences Techniques</h3>
 
-                                    <div class="skill">
-                                        <div class="parcial">
-                                            <div class="info">
-                                                <div class="name"> Javascript</div>
-                                                <div class="skill-percentage">20%</div>
-                                            </div>
-                                            <div class="progressbar">
-                                                <div class="percentage-pg" style="width :20%;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="skill">
-                                        <div class="parcial">
-                                            <div class="info">
-                                                <div class="name"> PHP</div>
-                                                <div class="skill-percentage">40%</div>
-                                            </div>
-                                            <div class="progressbar">
-                                                <div class="percentage-pg" style="width :20%;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="skill">
-                                        <div class="parcial">
-                                            <div class="info">
-                                                <div class="name"> SQL</div>
-                                                <div class="skill-percentage">55%</div>
-                                            </div>
-                                            <div class="progressbar">
-                                                <div class="percentage-pg" style="width :20%;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="skill-bar">
+                        <div class="info">
+                          <p>HTML/CSS (niveau de maîtrise en web design)</p>
                         </div>
-                    </div>
-
-                    <div class="col-sm-12 col-md-6">
-                        <div class="professionnal-skills">
-                            <h3>Compétences Professionnelles</h3>
-                            <ul class="professionnal-progress">
-                                <li>
-                                    <div class="progress progress-circle" data-progress="70"></div>
-                                    <div class="skill-name">Communication</div>
-                                </li>
-
-                                <li>
-                                    <div class="progress progress-circle" data-progress="70"></div>
-                                    <div class="skill-name">Communication</div>
-                                </li>
-
-                                <li>
-                                    <div class="progress progress-circle" data-progress="70"></div>
-                                    <div class="skill-name">Communication</div>
-                                </li>
-                            </ul>
+                        <div class="segments">
+                          <span class="segment filled" style="--delay: 0s"></span>
+                          <span class="segment filled" style="--delay: 0.4s"></span>
+                          <span class="segment filled" style="--delay: 0.8s"></span>
+                          <span class="segment half-filled" style="--delay: 1.2s"></span>
+                          <span class="segment" style="--delay: 1.6s"></span>
                         </div>
-                    </div>
-                </div>
+                      </div>
+
+                      <div class="skill-bar">
+                        <div class="info">
+                          <p>JavaScript (niveau de maîtrise dynamique)</p>
+                        </div>
+                        <div class="segments">
+                          <span class="segment filled" style="--delay: 0s"></span>
+                          <span class="segment filled" style="--delay: 0.4s"></span>
+                          <span class="segment half-filled" style="--delay: 0.8s"></span>
+                          <span class="segment" style="--delay: 1.2s"></span>
+                          <span class="segment" style="--delay: 1.6s"></span>
+                        </div>
+                      </div>
+
+                      <div class="skill-bar">
+                        <div class="info">
+                          <p>Backend (PHP, Vue.js, Symfony, etc.)</p>
+                        </div>
+                        <div class="segments">
+                          <span class="segment filled" style="--delay: 0s"></span>
+                          <span class="segment filled" style="--delay: 0.4s"></span>
+                          <span class="segment filled" style="--delay: 0.8s"></span>
+                          <span class="segment filled" style="--delay: 1.2s"></span>
+                          <span class="segment" style="--delay: 1.6s"></span>
+                        </div>
+                      </div>
+
+                      <div class="skill-bar">
+                        <div class="info">
+                          <p>Base de données (MySQL, PostgreSQL, PHPMyAdmin)</p>
+                        </div>
+                        <div class="segments">
+                          <span class="segment filled" style="--delay: 0s"></span>
+                          <span class="segment filled" style="--delay: 0.4s"></span>
+                          <span class="segment filled" style="--delay: 0.8s"></span>
+                          <span class="segment half-filled" style="--delay: 1.2s"></span>
+                          <span class="segment" style="--delay: 1.6s"></span>
+                        </div>
+                      </div>
+
+                      <div class="skill-bar">
+                        <div class="info">
+                          <p>Version Control (Git/GitHub)</p>
+                        </div>
+                        <div class="segments">
+                          <span class="segment filled" style="--delay: 0s"></span>
+                          <span class="segment filled" style="--delay: 0.4s"></span>
+                          <span class="segment half-filled" style="--delay: 0.8s"></span>
+                          <span class="segment" style="--delay: 1.2s"></span>
+                          <span class="segment" style="--delay: 1.6s"></span>
+                        </div>
+                      </div>
+            </div>
+
+            <div class="skill-right">
+                <h3>Compétences Professionnelles</h3>
+                <canvas id="radar-chart" width="500" height="500"></canvas>                    
             </div>
           </section>
           
+
+        <!--================================VEILLE TECHNOLOGIQUE====================================-->
+        <section class="veille" id="veille">
+            <h2 class="heading">Veille Technologique</h2>
+
+            <div class="veille-container">
+
+                <input type="radio" name="veille-slide" id="c1a" checked>
+                <label for="c1a" class="veille-card">
+                    <div class="veille-row">
+                        <div class="icon">1</div>
+                        <div class="description">
+                            <h4></h4>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="radio" name="veille-slide" id="c2a" checked>
+                <label for="c2a" class="veille-card">
+                    <div class="veille-row">
+                        <div class="icon">2</div>
+                        <div class="description">
+                            <h4></h4>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="radio" name="veille-slide" id="c3a" checked>
+                <label for="c3a" class="veille-card">
+                    <div class="veille-row">
+                        <div class="icon">3</div>
+                        <div class="description">
+                            <h4></h4>
+                        </div>
+                    </div>
+                </label>
+
+                <input type="radio" name="veille-slide" id="c4a" checked>
+                <label for="c4a" class="veille-card">
+                    <div class="veille-row">
+                        <div class="icon">4</div>
+                        <div class="description">
+                            <h4></h4>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+        </section>
 
         <!--================================PROJETS====================================-->
         <section class="projects" id="projects">
@@ -221,7 +266,7 @@
 
             <div class="projects-container">
 
-                <div class="project-box">
+                <div class="project-box" onclick="openProjectModal(1)">
                 <img src="assets/desc-projet1.jpg" alt="">
                     <div class="project-info">
                         <h4>Création individuelle : Site Web métier</h4>
@@ -234,7 +279,7 @@
                     </div>
                 </div>
 
-                <div class="project-box">
+                <div class="project-box" onclick="openProjectModal(2)">
                 <img src="assets/desc-projet2.jpg" alt="">
                     <div class="project-info">
                         <h4>Créaton d'un gestionnaire d'activités</h4>
@@ -246,7 +291,7 @@
                     </div>
                 </div>
 
-                <div class="project-box">
+                <div class="project-box" onclick="openProjectModal(3)">
                 <img src="assets/desc-projet3.jpg" alt="">
                     <div class="project-info">
                         <h4>Sécurisation anti-hacking</h4>
@@ -258,18 +303,31 @@
                     </div>
                 </div>
 
-                <div class="project-box">
-                    <img src="assets/desc-projet3.jpg" alt="">
-                        <div class="project-info">
-                            <h4>Manipulation de données - projet stage</h4>
-                            <p>Création d'un site web en modèle MVC
-                                pour but de manipulation de données via
-                                de nombreux formulaires de traitement. <br>
-                                (utilisation de routeur MVC, autoloader,
-                                URLs customisés et paramètres côté serveur)
-                            </p>
-                        </div>
+                <div class="project-box" onclick="openProjectModal(4)">
+                <img src="assets/desc-projet3.jpg" alt="">
+                    <div class="project-info">
+                        <h4>Manipulation de données - projet stage</h4>
+                        <p>Création d'un site web en modèle MVC
+                            pour but de manipulation de données via
+                            de nombreux formulaires de traitement. <br>
+                            (utilisation de routeur MVC, autoloader,
+                            URLs customisés et paramètres côté serveur)
+                        </p>
                     </div>
+                </div>
+
+                <div class="project-box" onclick="openProjectModal(5)">
+                <img src="assets/desc-projet3.jpg" alt="">
+                    <div class="project-info">
+                        <h4>Site vitrine fictif "GoslingDrive"</h4>
+                        <p>Projet de 1er semestre en trinôme, site de
+                        e-commerce/drive fictif nommé "GoslingDrive".
+                        Réalisé avec Symfony et Twig, sécurisation contre
+                        attaques (injections SQL, attaques XSS)
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -325,6 +383,26 @@
                 </li>
             </ul>
         </footer>
+
+
+        <!-- Modale des projets -->
+        <div id="project-modal" class="modal">
+            <div class="modal-content">
+            <span class="close-modal" onclick="closeProjectModal()">&times;</span>
+              <!-- Partie gauche : Titre et description -->
+              <div class="modal-left">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+              </div>
+          
+              <!-- Partie droite : slider -->
+              <div class="modal-right">
+                
+              </div>
+            </div>
+          </div>
+          
+          
 
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/js-circle-progress/dist/circle-progress.min.js" type="module"></script>
