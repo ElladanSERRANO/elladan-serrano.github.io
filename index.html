@@ -214,51 +214,145 @@
         <!--================================VEILLE TECHNOLOGIQUE====================================-->
         <section class="veille" id="veille">
             <h2 class="heading">Veille Technologique</h2>
-
             <div class="veille-container">
-
-                <input type="radio" name="veille-slide" id="c1a" checked>
-                <label for="c1a" class="veille-card">
-                    <div class="veille-row">
-                        <div class="icon">1</div>
-                        <div class="description">
-                            <h4></h4>
+                <button class="veille-prev">&#10094;</button>
+                <div class="veille-carousel-wrapper">
+                    <div class="veille-carousel">
+                        <div class="veille-item">
+                            <img src="assets/w3school.png" alt="W3Schools">
+                            <h3>W3Schools</h3>
+                            <p>Tutoriels et aides sur la plupart des langages de programmation. Utilisé principalement pour HTML, CSS, PHP et JavaScript</p>
+                            <a href="https://www.w3schools.com/" target="_blank" class="btn">Site Web</a>
+                        </div>
+                        <div class="veille-item">
+                            <img src="assets/stackoverflow.png" alt="Stack Overflow">
+                            <h3>Stack Overflow</h3>
+                            <p>Plateforme en ligne de centaines / milliers de forums et questions, avec une communauté active à la réponse, des amateurs aux professionnels</p>
+                            <a href="https://stackoverflow.com/" target="_blank" class="btn">Site Web</a>
+                        </div>
+                        <div class="veille-item">
+                            <img src="assets/chatgpt.jpg" alt="ChatGPT">
+                            <h3>ChatGPT</h3>
+                            <p>Plateforme de chat avec IA, et IA Customisées pour assistance améliorée sur de nombreux sujets (code, correction de texte, génération d'images,...)</p>
+                            <a href="https://openai.com/chatgpt" target="_blank" class="btn">Site Web</a>
+                        </div>
+                        <div class="veille-item">
+                            <img src="assets/howtodev.png" alt="YouTube Dev">
+                            <h3>Chaîne "How To Dev Web"</h3>
+                            <p>Chaîne Youtube de tutoriels et de création en temps réel de projets, élements de site, accessibles pour n'importe qui</p>
+                            <a href="https://www.youtube.com/@HowtoWebDev" target="_blank" class="btn">Chaîne</a>
+                        </div>
+                        <div class="veille-item">
+                            <img src="assets/howtodev.png" alt="YouTube Dev">
+                            <h3>Forum Reddit "r/webdev"</h3>
+                            <p>Forum Reddit active de partage d'informations, nouveautés et aides aux débutants en programmation</p>
+                            <a href="https://www.reddit.com/r/webdev/?rdt=48852" target="_blank" class="btn">Forum</a>
+                        </div>
+                        <div class="veille-item">
+                            <img src="assets/mdnwebdev.png" alt="YouTube Dev">
+                            <h3>MDN Web Dev</h3>
+                            <p>Tutoriels avancés avec exemples intéractifs sur de nombreux langages de programmation (utilisé principalement pour HTML et CSS)</p>
+                            <a href="https://developer.mozilla.org/fr/" target="_blank" class="btn">Site Web</a>
                         </div>
                     </div>
-                </label>
-
-                <input type="radio" name="veille-slide" id="c2a" checked>
-                <label for="c2a" class="veille-card">
-                    <div class="veille-row">
-                        <div class="icon">2</div>
-                        <div class="description">
-                            <h4></h4>
-                        </div>
-                    </div>
-                </label>
-
-                <input type="radio" name="veille-slide" id="c3a" checked>
-                <label for="c3a" class="veille-card">
-                    <div class="veille-row">
-                        <div class="icon">3</div>
-                        <div class="description">
-                            <h4></h4>
-                        </div>
-                    </div>
-                </label>
-
-                <input type="radio" name="veille-slide" id="c4a" checked>
-                <label for="c4a" class="veille-card">
-                    <div class="veille-row">
-                        <div class="icon">4</div>
-                        <div class="description">
-                            <h4></h4>
-                        </div>
-                    </div>
-                </label>
+                </div>
+                <button class="veille-next">&#10095;</button>
             </div>
-
         </section>
+
+
+<!-- AI Skills & Projects Section -->
+<section class="ai-section" id="ai-section">
+    <h2 class="heading">Utilisation de l'IA</h2>
+    
+    <!-- AI Skills Section -->
+    <div class="ai-skills-section">
+        <h3>IA Compétences et Outils</h3>
+        <div class="ai-skills-container">
+            <div class="skill" data-rating="5">
+                <p>ChatGPT</p>
+                <div class="stars"></div>
+                <span class="skill-level">Avancé</span>
+                <p class="skill-description">Used for generating code suggestions, debugging, and enhancing productivity in software development.</p>
+            </div>
+            <div class="skill" data-rating="3.5">
+                <p>Custom GPTs</p>
+                <div class="stars"></div>
+                <span class="skill-level">Intermédiaire</span>
+                <p class="skill-description">Developed specialized GPT models for project management, automated code reviews, and AI-powered learning.</p>
+            </div>
+            <div class="skill" data-rating="2.5">
+                <p>RVC AI</p>
+                <div class="stars"></div>
+                <span class="skill-level">Amateur</span>
+                <p class="skill-description">Implemented AI voice cloning for generating realistic synthetic voices in creative applications.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Projects Section -->
+    <div class="ai-projects-section">
+        <h3>Projets Assistés Par IA</h3>
+        <div class="ai-projects-container">
+            <div class="ai-project" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="assets/storyboard-ai.webp" alt="Storyboard AI">
+                        <h4>Compagnon d'Écriture / Storytelling</h4>
+                        <a href="https://archiveofourown.org/works/63168292" target="_blank" class="btn">Aperçu</a>
+                    </div>
+                    <div class="card-back">
+                        <p>Utilisation du GPT Custom "Unbound Limitless Story Writer" pour 
+                            l'écriture en deux temps d'histoires originales, entièrement rédigées en anglais.</br></br>
+                            Travail de réécriture complète avec outils tels que yWriter7 et DeepL.</br></br>
+                            Utilisation à but d'amélioration de mon vocabulaire et niveau général d'anglais, en plus
+                            d'un travail créatif longie durée.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="ai-project" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="assets/rvc-ai.webp" alt="AI-Generated Voice Cloning">
+                        <h4>Clonage de Voix - Procédé RVC</h4>
+                        <a href="https://applio.org/" target="_blank" class="btn">En Savoir Plus</a>
+                    </div>
+                    <div class="card-back">
+                        <p>
+                            Projets amateurs de conversion / clonage de voix par IA à but narratif.</br></br>
+                            IA Utilisées : </br></br>
+                            <ul>
+                                <li>W-Okada Voice Changer</li>
+                                <li>Applio RVC UI (Conversion et Création de Modèles)</li>
+                                <li>Utilisation d'Audacity pour l'editing des fichiers audio / samples</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="ai-project" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="assets/custom-gpts.jpg" alt="Custom GPT for Learning">
+                        <h4>GPTs Customs pour Apprentissage</h4>
+                        <a href="https://chatgpt.com/gpts" target="_blank" class="btn">Aperçu</a>
+                    </div>
+                    <div class="card-back">
+                        <p>
+                            Utilisation de nombreuses versions customisées de ChatGPT pour utilisations diverses comme : </br></br>
+                            "Code Copilot" & "Code GPT" pour assistance en programmation </br></br>
+                            "Unbound Limitless Story Writer" pour l'écriture narrative.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
 
         <!--================================PROJETS====================================-->
         <section class="projects" id="projects">
@@ -363,23 +457,23 @@
 
             <ul class="list">
                 <li>
-                    <a href="#">truc</a>
+                    <a href="#description">Présentation</a>
                 </li>
-
+                &nbsp;
                 <li>
-                    <a href="#">truc</a>
+                    <a href="#career">Parcours</a>
                 </li>
-
+                &nbsp;
                 <li>
-                    <a href="#">truc</a>
+                    <a href="#skills">Compétences</a>
                 </li>
-
+                &nbsp;
                 <li>
-                    <a href="#">truc</a>
+                    <a href="#veille">Veille</a>
                 </li>
-
+                &nbsp;
                 <li>
-                    <a href="#">truc</a>
+                    <a href="#projets">Projets</a>
                 </li>
             </ul>
         </footer>

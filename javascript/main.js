@@ -49,6 +49,8 @@ const radarChart = new Chart(ctx, {
 });
 
 
+const baseURL = "https://elladanserrano.github.io/elladan-serrano.github.io/";
+
 // Données des projets
 const projectsData = [
   {
@@ -56,10 +58,10 @@ const projectsData = [
     title: "Création individuelle : Site Web métier",
     description: "Page web de présentation du métier de développeur Full-Stack, en plusieurs parties (prérequis, langages, poursuites avancées du métier, différents salaires, liens utiles) avec réarrangement responsive design.",
     images: [
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet1/image1.png",
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet1/image2.png",
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet1/image3.png",
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet1/image4.png",
+      "${baseURL}assets/projet1/image1.png",
+      "${baseURL}assets/image2.png",
+      "${baseURL}assets/image3.png",
+      "${baseURL}assets/image4.png",
     ],
   },
   {
@@ -67,10 +69,10 @@ const projectsData = [
     title: "Création d'un gestionnaire d'activités",
     description: "Conception d'un site web fictif de gestion d'animations lycéennes à partir d'une base de données fournie nommée 'animationsfld'. Le site est découpé en plusieurs parties pour chaque type d'utilisateur, et la mienne était sur les étudiants, pouvant accéder à leur profil, voir les animations à venir, s'y inscrire ou se désinscrire et voir les animations passées.",
     images: [
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet2/image1.png",
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet2/image2.png",
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet2/image3.png",
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet2/image4.png",
+      "${baseURL}assets/image1.png",
+      "${baseURL}assets/image2.png",
+      "${baseURL}assets/image3.png",
+      "${baseURL}assets/image4.png",
     ],
   },
   {
@@ -78,10 +80,10 @@ const projectsData = [
     title: "Sécurisation anti-hacking",
     description: "Je ne suis pas parvenu à récupérer les images de ce projet de l'an dernier",
     images: [
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet3/image1.png",
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet3/image2.png",
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet3/image3.png",
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet3/image4.png",
+      "${baseURL}assets/image1.png",
+      "${baseURL}assets/image2.png",
+      "${baseURL}assets/image3.png",
+      "${baseURL}assets/image4.png",
     ],
   },
   {
@@ -89,10 +91,10 @@ const projectsData = [
     title: "Manipulation de données - Projet de Stage",
     description: "Site web avec interface rudimentaire réalisé pendant mon stage dans l'entreprise Alancia, servant de plateforme de gestion pour personnel, de stocks de produits, d'ajout, validation/refus, de suppression et de visualisation globale. Le site est accessible via XAMPP et relié à une base de données crée avec MySQL Workbench.",
     images: [
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet4/image1.png",
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet4/image2.png",
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet4/image3.png",
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet4/image4.png",
+      "${baseURL}assets/image1.png",
+      "${baseURL}assets/image2.png",
+      "${baseURL}assets/image3.png",
+      "${baseURL}assets/image4.png",
     ],
   },
   {
@@ -100,10 +102,10 @@ const projectsData = [
     title: "Site vitrine fictif 'GoslingDrive'",
     description: "Site web de 1er semestre 2e année, site fictif de e-commerce/plateforme de Drive, en 3 parties pour clients/personnel/admin, gestion plus complexe des produits et stocks, algorithme basique de récupération des produits (basé sur IKEA) pour les commandes client. Système de récupération client par casier en libre service.",
     images: [
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet5/image1.jpg",
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet5/image2.jpg",
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet5/image3.jpg",
-      "/Users/Parzy/OneDrive/Documents/portfolio/assets/projet5/image4.jpg",
+      "${baseURL}assets/image1.jpg",
+      "${baseURL}assets/image2.jpg",
+      "${baseURL}assets/image3.jpg",
+      "${baseURL}assets/image4.jpg",
     ],
   },
 ];
@@ -149,3 +151,60 @@ modal.addEventListener("click", (e) => {
     closeModal();
   }
 });
+
+
+
+
+// Carousel veille
+
+const veilleCarousel = document.querySelector('.veille-carousel');
+const veilleItems = document.querySelectorAll('.veille-item');
+const veillePrev = document.querySelector('.veille-prev');
+const veilleNext = document.querySelector('.veille-next');
+
+let index = 0;
+const visibleItems = 3; // Number of items visible at a time
+const totalItems = veilleItems.length;
+const itemWidth = veilleItems[0].offsetWidth + 20;
+
+function updateCarousel() {
+    if (index >= totalItems - visibleItems + 1) {
+        index = 0; // Loop back to the start when reaching the last full set
+    }
+    if (index < 0) {
+        index = totalItems - visibleItems; // Go to the last full set when going backwards
+    }
+    
+    const offset = index * itemWidth;
+    veilleCarousel.style.transform = `translateX(-${offset}px)`;
+}
+
+veilleNext.addEventListener('click', () => {
+    index++;
+    updateCarousel();
+});
+
+veillePrev.addEventListener('click', () => {
+    index--;
+    updateCarousel();
+});
+
+
+// cartes et star-rating AI
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".skill").forEach(skill => {
+      const rating = skill.getAttribute("data-rating");
+      const starsContainer = skill.querySelector(".stars");
+      for (let i = 1; i <= 5; i++) {
+          let star = document.createElement("span");
+          star.classList.add(i <= rating ? "filled" : "empty");
+          star.innerHTML = "★";
+          starsContainer.appendChild(star);
+      }
+  });
+});
+
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
