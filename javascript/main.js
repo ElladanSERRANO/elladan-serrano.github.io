@@ -58,10 +58,10 @@ const projectsData = [
     title: "Création individuelle : Site Web métier",
     description: "Page web de présentation du métier de développeur Full-Stack, en plusieurs parties (prérequis, langages, poursuites avancées du métier, différents salaires, liens utiles) avec réarrangement responsive design.",
     images: [
-      "${baseURL}assets/projet1/image1.png",
-      "${baseURL}assets/projet1/image2.png",
-      "${baseURL}assets/projet1/image3.png",
-      "${baseURL}assets/projet1/image4.png",
+      "assets/projet1/image1.png",
+      "assets/projet1/image2.png",
+      "assets/projet1/image3.png",
+      "assets/projet1/image4.png",
     ],
   },
   {
@@ -69,10 +69,10 @@ const projectsData = [
     title: "Création d'un gestionnaire d'activités",
     description: "Conception d'un site web fictif de gestion d'animations lycéennes à partir d'une base de données fournie nommée 'animationsfld'. Le site est découpé en plusieurs parties pour chaque type d'utilisateur, et la mienne était sur les étudiants, pouvant accéder à leur profil, voir les animations à venir, s'y inscrire ou se désinscrire et voir les animations passées.",
     images: [
-      "${baseURL}assets/projet2/image1.png",
-      "${baseURL}assets/projet2/image2.png",
-      "${baseURL}assets/projet2/image3.png",
-      "${baseURL}assets/projet2/image4.png",
+      "assets/projet2/image1.png",
+      "assets/projet2/image2.png",
+      "assets/projet2/image3.png",
+      "assets/projet2/image4.png",
     ],
   },
   {
@@ -80,10 +80,10 @@ const projectsData = [
     title: "Sécurisation anti-hacking",
     description: "Je ne suis pas parvenu à récupérer les images de ce projet de l'an dernier",
     images: [
-      "${baseURL}assets/image1.png",
-      "${baseURL}assets/image2.png",
-      "${baseURL}assets/image3.png",
-      "${baseURL}assets/image4.png",
+      "assets/image1.png",
+      "assets/image2.png",
+      "assets/image3.png",
+      "assets/image4.png",
     ],
   },
   {
@@ -91,10 +91,10 @@ const projectsData = [
     title: "Manipulation de données - Projet de Stage",
     description: "Site web avec interface rudimentaire réalisé pendant mon stage dans l'entreprise Alancia, servant de plateforme de gestion pour personnel, de stocks de produits, d'ajout, validation/refus, de suppression et de visualisation globale. Le site est accessible via XAMPP et relié à une base de données crée avec MySQL Workbench.",
     images: [
-      "${baseURL}assets/projet4/image1.png",
-      "${baseURL}assets/projet4/image2.png",
-      "${baseURL}assets/projet4/image3.png",
-      "${baseURL}assets/projet4/image4.png",
+      "assets/projet4/image1.png",
+      "assets/projet4/image2.png",
+      "assets/projet4/image3.png",
+      "assets/projet4/image4.png",
     ],
   },
   {
@@ -102,10 +102,10 @@ const projectsData = [
     title: "Site vitrine fictif 'GoslingDrive'",
     description: "Site web de 1er semestre 2e année, site fictif de e-commerce/plateforme de Drive, en 3 parties pour clients/personnel/admin, gestion plus complexe des produits et stocks, algorithme basique de récupération des produits (basé sur IKEA) pour les commandes client. Système de récupération client par casier en libre service.",
     images: [
-      "${baseURL}assets/projet5/image1.jpg",
-      "${baseURL}assets/projet5/image2.jpg",
-      "${baseURL}assets/projet5/image3.jpg",
-      "${baseURL}assets/projet5/.jpg",
+      "assets/projet5/image1.jpg",
+      "assets/projet5/image2.jpg",
+      "assets/projet5/image3.jpg",
+      "assets/projet5/image4.jpg",
     ],
   },
 ];
