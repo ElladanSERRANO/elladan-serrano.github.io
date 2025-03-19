@@ -378,8 +378,16 @@ span {
     margin: 0 auto;
     max-width: 100%;
   }
-  
 
+
+.skills-button-container .btn {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    width: 20%;
+    white-space: nowrap;
+}
+  
 
 /* ================== Certifs Styles ================== */
 
@@ -409,7 +417,7 @@ span {
     transform: scale(1.02);
 }
 
-.certification-card h3 {
+.certification-card h2 {
     margin-bottom: 1rem;
     color: var(--main-color);
 }
