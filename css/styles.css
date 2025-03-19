@@ -379,6 +379,54 @@ span {
     max-width: 100%;
   }
   
+
+
+/* ================== Certifs Styles ================== */
+
+.certifications-section {
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.certifications-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.certification-card {
+    background: var(--second-bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.certification-card:hover {
+    transform: scale(1.02);
+}
+
+.certification-card h3 {
+    margin-bottom: 1rem;
+    color: var(--main-color);
+}
+
+.certification-card p {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.pdf-container canvas {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
   
 /* ================== Updated Veille Technologique Styles ================== */
 .veille {
@@ -1079,6 +1127,11 @@ span {
     .veille-card {
         width: 80%;
         height: auto;
+    }
+
+
+    .certifications-container {
+        grid-template-columns: 1fr;
     }
 }
 

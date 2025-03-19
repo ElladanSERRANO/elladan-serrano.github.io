@@ -209,6 +209,39 @@
                 <canvas id="radar-chart" width="500" height="500"></canvas>                    
             </div>
           </section>
+
+
+        <!--================================CERTFICATIONS====================================-->
+        <section class="certifications-section" id="certifications">
+            <h2 class="heading">Cyber Security Certifications</h2>
+        
+            <div class="certifications-container">
+                <div class="certification-card">
+                    <h3>Certification 1: Cyber Security Fundamentals</h3>
+                    <div class="pdf-container" id="pdf-viewer-1"></div>
+                    <p>This certification covers the basic principles of cyber security including network defense, cryptography, and risk management strategies.</p>
+                </div>
+        
+                <div class="certification-card">
+                    <h3>Certification 2: Ethical Hacking Essentials</h3>
+                    <div class="pdf-container" id="pdf-viewer-2"></div>
+                    <p>An introductory certification focusing on ethical hacking techniques, penetration testing, and vulnerability assessment tools.</p>
+                </div>
+        
+                <div class="certification-card">
+                    <h3>Certification 3: Network Security Intermediate</h3>
+                    <div class="pdf-container" id="pdf-viewer-3"></div>
+                    <p>This certification provides in-depth knowledge of securing wired and wireless networks against common cyber threats.</p>
+                </div>
+        
+                <div class="certification-card">
+                    <h3>Certification 4: Advanced Threat Detection</h3>
+                    <div class="pdf-container" id="pdf-viewer-4"></div>
+                    <p>A focused certification on advanced techniques in threat detection, incident response, and security monitoring.</p>
+                </div>
+            </div>
+        </section>
+
           
 
         <!--================================VEILLE TECHNOLOGIQUE====================================-->
@@ -501,5 +534,32 @@
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/js-circle-progress/dist/circle-progress.min.js" type="module"></script>
         <script src="javascript/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+        <script>
+            // Initialize worker
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+          
+            const certs = [
+              {id: 'pdf-viewer-1', url: 'assets/certifications/Certificat_1_CNIL.pdf'},
+              {id: 'pdf-viewer-2', url: 'assets/certifications/Certificat_2_CNIL.pdf'},
+              {id: 'pdf-viewer-3', url: 'assets/certifications/Certificat_3_CNIL.pdf'},
+              {id: 'pdf-viewer-4', url: 'assets/certifications/Certificat_ANSSI.pdf'}
+            ];
+          
+            certs.forEach(cert => {
+              pdfjsLib.getDocument(cert.url).promise.then(pdf => {
+                pdf.getPage(1).then(page => {
+                  const container = document.getElementById(cert.id);
+                  const canvas = document.createElement('canvas');
+                  const context = canvas.getContext('2d');
+                  const viewport = page.getViewport({ scale: 1.5 });
+                  canvas.height = viewport.height;
+                  canvas.width = viewport.width;
+                  container.appendChild(canvas);
+                  page.render({ canvasContext: context, viewport: viewport });
+                });
+              });
+            });
+          </script>
     </body>
 </html>
