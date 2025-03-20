@@ -77,13 +77,13 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "Sécurisation anti-hacking",
-    description: "Je ne suis pas parvenu à récupérer les images de ce projet de l'an dernier",
+    title: "refonte de Site - Projet de Stage",
+    description: "Reconstruction du site de l'association PERL, création de maquette complète, design épuré des pages avec meilleure lisibilité, ajout de nouvelles features pour rendre la manipulation 'admin' plus simple.",
     images: [
-      "assets/image1.png",
-      "assets/image2.png",
-      "assets/image3.png",
-      "assets/image4.png",
+      "assets/projet3/image1.png",
+      "assets/projet3/image2.png",
+      "assets/projet3/image3.png",
+      "assets/projet3/image4.png",
     ],
   },
   {
