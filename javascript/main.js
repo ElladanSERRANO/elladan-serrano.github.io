@@ -77,7 +77,7 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "refonte de Site - Projet de Stage",
+    title: "Refonte de Site - Projet de Stage",
     description: "Reconstruction du site de l'association PERL, création de maquette complète, design épuré des pages avec meilleure lisibilité, ajout de nouvelles features pour rendre la manipulation 'admin' plus simple.",
     images: [
       "assets/projet3/image1.png",
